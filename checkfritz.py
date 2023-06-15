@@ -2,9 +2,10 @@
 
 from fritzconnection import FritzConnection
 import sys
+import os
 
-FRITZBOX_USER = "monitoring"
-FRITZBOX_PASSWORD = "xxx"
+FRITZBOX_USER = os.environ['FB_USENAME']
+FRITZBOX_PASSWORD = os.environ["FB_PASSWORD"]
 
 try:
     fc = FritzConnection(address='192.168.178.1', user=FRITZBOX_USER, password=FRITZBOX_PASSWORD, timeout=2.0)
